@@ -206,24 +206,6 @@ class GestorContactos:
             print(Colores.texto(Colores.ROJO, "❌ Entrada inválida"))
 
     # ------------------------
-    # CAMBIAR ESTADO
-    # ------------------------
-    def cambiar_estado(self):
-        self.listar_contactos()
-        if not self.contactos:
-            return
-        try:
-            idx = int(input("🔄 Número de contacto a cambiar estado: ")) - 1
-            contacto = self.contactos[idx]
-        except Exception:
-            print("❌ Selección inválida")
-            return
-        contacto.activo = not contacto.activo
-        estado = "Activo" if contacto.activo else "Inactivo"
-        self.guardar_contactos()
-        print(f"✅ Estado cambiado a {estado} para {contacto.nombre}")
-
-    # ------------------------
     # EXPORTAR CSV
     # ------------------------
     def exportar_csv(self):
